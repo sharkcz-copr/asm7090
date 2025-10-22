@@ -1,0 +1,12 @@
+diff -up asm7090/Makefile.orig asm7090/Makefile
+--- asm7090/Makefile.orig	2025-10-22 21:38:57.574536180 +0200
++++ asm7090/Makefile	2025-10-22 21:39:16.606104232 +0200
+@@ -59,7 +59,7 @@ solaris:
+ 
+ 
+ asm7090: $(ASMOBJS)
+-	$(CC) -o asm7090 $(ASMOBJS)
++	$(CC) -o asm7090 $(ASMOBJS) $(LDFLAGS)
+ 
+ asm7090.tok asm7090.err asm7090.ptb asm7090.sem : asm7090.bnf
+ 	chat -l asm7090.bnf

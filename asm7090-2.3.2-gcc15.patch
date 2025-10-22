@@ -1,0 +1,21 @@
+diff -up asm7090/asmfps.c.gcc15 asm7090/asmfps.c
+--- asm7090/asmfps.c.gcc15	2025-10-19 20:18:54.424668258 +0200
++++ asm7090/asmfps.c	2025-10-19 20:19:10.328494521 +0200
+@@ -116,7 +116,7 @@ fp_pack (t_uint64 *h, t_uint64 *l,
+ ***********************************************************************/
+ 
+ static void
+-dofrnd ()
++dofrnd (void)
+ {
+    FP_t op;
+    int test;
+@@ -238,7 +238,7 @@ ibm_frnd (t_uint64 *op1, int nrm)
+    fprintf (stderr, "   mq = %012llo\n", mq);
+ #endif
+ 
+-   dofrnd (nrm);
++   dofrnd ();
+ 
+    ac = (ac << 27) | (mq & 0777777777);
+    *op1 = ac;
